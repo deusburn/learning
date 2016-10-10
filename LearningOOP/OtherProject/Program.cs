@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LearningOOP;
 
 namespace OtherProject
 {
@@ -10,7 +11,8 @@ namespace OtherProject
     {
         static void Main(string[] args)
         {
-            //todo: research access to classes A, B, C
-        }
+            // change (a) is introduced here because it is a (public), open from two different collections
+            // good night
+            var a = new A();
     }
 }

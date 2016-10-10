@@ -10,8 +10,10 @@ namespace LearningOOP
     {
         static void Main(string[] args)
         {
-            //todo: research access to classes A, B, C
-            // ха, ха
+            var a = new A();
+            // variables (b) and (c) - internal, other collections can not use them
+            var b = new B();
+            var c = new C();
         }
     }
 }
