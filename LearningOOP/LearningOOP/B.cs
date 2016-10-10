@@ -6,11 +6,7 @@ using System.Threading.Tasks;
 
 namespace LearningOOP
 {
-    class Program
+    internal class B
     {
-        static void Main(string[] args)
-        {
-            //todo: research access to classes A, B, C
-        }
     }
 }
