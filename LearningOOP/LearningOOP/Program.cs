@@ -11,6 +11,7 @@ namespace LearningOOP
         static void Main(string[] args)
         {
             //todo: research access to classes A, B, C
+            // ха, ха
         }
     }
 }
