@@ -11,9 +11,11 @@ namespace LearningOOP
     {
         static void Main(string[] args)
         {
+            // change (a) is introduced here because it is a (public), open from two different assembly
             var a = new A();
-            // variables (b) and (c) - internal, other collections can not use them
+            // variables (b) - internal, other collections can not use them
             var b = new B();
+            // variables (c) - internal, other collections can not use them
             var c = new C();
 
             //create new object of class Parrot via constructor
