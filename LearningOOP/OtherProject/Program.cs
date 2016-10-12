@@ -14,5 +14,6 @@ namespace OtherProject
             // change (a) is introduced here because it is a (public), open from two different collections
             // good night
             var a = new A();
+        }
     }
 }
