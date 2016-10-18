@@ -6,27 +6,31 @@ using System.Threading.Tasks;
 
 namespace LearningOOP
 {
-    //завдання: Створити масив від 1 до 100. Знайти суму всіх чисел, які кратні трьом. (суму вивести на екран)
+    //Створити масив від 1 до 100. Вивести на екран в зворотньому порядку парні числа більші за 50. (100 98 96 94 92...)
     class Program
     {
         static void Main(string[] args)
         {
-            int summa = 0;
-            var arrayMen = new int[] {9, 2, 3, 4, 5, 6};//new int[100];
-//            for (int i = 0; i < arrayMen.Length; i++)
-//            {
-//                arrayMen[i] = i + 1;
-//            }
-            for (int i = 0; i < arrayMen.Length; i++)
+            var array = new int[100];
+            for (int i = 0; i < array.Length; i++)
             {
-                if ((arrayMen[i] % 3) == 0)
+                array[i] = i + 1;
+            }
+            //for (int i = 0; i < array.Length; i++)
+            //{
+            //    if ((array[i] % 2 == 0) && (array[i] >= 50))
+            //    {
+            //        Console.WriteLine(array[i]);
+            //    }
+            //}
+            for (int i = 99; i >= 0 ; i--)
+            {
+                if ((array[i] % 2 == 0) && (array[i] >= 50) )
                 {
-                    summa += arrayMen[i];
+                Console.Write(array[i] + " ");
                 }
             }
-            Console.Write(summa + " ");
             Console.ReadKey();
-
         }
     }
 }
