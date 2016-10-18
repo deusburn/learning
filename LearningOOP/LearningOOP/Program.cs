@@ -15,18 +15,23 @@ namespace LearningOOP
         static void Main(string[] args)
         {
             var array = new int[68];
+
             for (int i = 0; i < array.Length; i++)
             {
                 array[i] = i + 1;
             }
+
+            var x2 = array.Length / 2;
+            var x1 = x2 - 1;
+
             for (int i = 0; i < array.Length / 2 ; i++)
             {
-                var x2 = array.Length / 2;
-                var x1 = x2 - 1;
                 var pos = x1 - i;
                 var pos1 = i + x2;
+
                 Console.Write("{0}, {1};   ", array[pos], array[pos1]);
             }
+
             Console.ReadKey();
         }
     }
