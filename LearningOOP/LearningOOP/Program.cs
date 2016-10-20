@@ -12,25 +12,55 @@ namespace LearningOOP
     //результат: 3 4 2 5 1 6)
     class Program
     {
-        static void Main(string[] args)
+        public static void WritePairsOfElements(int[] array)
         {
-            var array = new int[68];
+            if (array.Length % 2 == 0)
+            {
+                var x2 = array.Length / 2;
+                var x1 = x2 - 1;
 
+                for (int i = 0; i < array.Length / 2; i++)
+                {
+                    var pos = x1 - i;
+                    var pos1 = i + x2;
+
+                    Console.Write("{0}, {1};   ", array[pos], array[pos1]);
+                }
+            }
+            else
+            {
+                var length = array.Length;
+                var middle = (length - 1) / 2;
+                Console.Write(array[middle] + ";  ");
+
+                var x2 = ((array.Length - 1) / 2) + 1;
+                var x1 = ((array.Length - 1) / 2) - 1;
+
+                for (int i = 0; i < array.Length / 2; i++)
+                {
+                    var pos = x1 - i;
+                    var pos1 = i + x2;
+
+                    Console.Write("{0}, {1};   ", array[pos], array[pos1]);
+                }
+            }
+        }
+
+        public static void InitializeArray(int[] array)
+        {
             for (int i = 0; i < array.Length; i++)
             {
                 array[i] = i + 1;
             }
+        }
 
-            var x2 = array.Length / 2;
-            var x1 = x2 - 1;
+        static void Main(string[] args)
+        {
+            var array = new int[180];
 
-            for (int i = 0; i < array.Length / 2 ; i++)
-            {
-                var pos = x1 - i;
-                var pos1 = i + x2;
+            InitializeArray(array);
 
-                Console.Write("{0}, {1};   ", array[pos], array[pos1]);
-            }
+            WritePairsOfElements(array);
 
             Console.ReadKey();
         }
