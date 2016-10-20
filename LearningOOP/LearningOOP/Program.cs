@@ -12,37 +12,58 @@ namespace LearningOOP
     //результат: 3 4 2 5 1 6)
     class Program
     {
+        static void Main(string[] args)
+        {
+            var array = new int[12];
+
+            InitializeArray(array);
+
+            WritePairsOfElements(array);
+
+            Console.ReadKey();
+        }
+
+        public static void WritePairsOfOddArray(int[] array)
+        {
+            var length = array.Length;
+            var middle = (length - 1) / 2;
+            Console.Write(array[middle] + ";  ");
+
+            var x2 = ((array.Length - 1) / 2) + 1;
+            var x1 = ((array.Length - 1) / 2) - 1;
+
+            for (int i = 0; i < array.Length / 2; i++)
+            {
+                var pos = x1 - i;
+                var pos1 = i + x2;
+
+                Console.Write("{0}, {1};   ", array[pos], array[pos1]);
+            }
+        }
+
+        public static void WritePairsOfEvenArray(int[] array)
+        {
+            var x2 = array.Length / 2;
+            var x1 = x2 - 1;
+
+            for (int i = 0; i < array.Length / 2; i++)
+            {
+                var pos = x1 - i;
+                var pos1 = i + x2;
+
+                Console.Write("{0}, {1};   ", array[pos], array[pos1]);
+            }
+        }
+
         public static void WritePairsOfElements(int[] array)
         {
             if (array.Length % 2 == 0)
             {
-                var x2 = array.Length / 2;
-                var x1 = x2 - 1;
-
-                for (int i = 0; i < array.Length / 2; i++)
-                {
-                    var pos = x1 - i;
-                    var pos1 = i + x2;
-
-                    Console.Write("{0}, {1};   ", array[pos], array[pos1]);
-                }
+                WritePairsOfEvenArray(array);
             }
             else
             {
-                var length = array.Length;
-                var middle = (length - 1) / 2;
-                Console.Write(array[middle] + ";  ");
-
-                var x2 = ((array.Length - 1) / 2) + 1;
-                var x1 = ((array.Length - 1) / 2) - 1;
-
-                for (int i = 0; i < array.Length / 2; i++)
-                {
-                    var pos = x1 - i;
-                    var pos1 = i + x2;
-
-                    Console.Write("{0}, {1};   ", array[pos], array[pos1]);
-                }
+                WritePairsOfOddArray(array);
             }
         }
 
@@ -52,17 +73,6 @@ namespace LearningOOP
             {
                 array[i] = i + 1;
             }
-        }
-
-        static void Main(string[] args)
-        {
-            var array = new int[180];
-
-            InitializeArray(array);
-
-            WritePairsOfElements(array);
-
-            Console.ReadKey();
         }
     }
 }
