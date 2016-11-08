@@ -4,7 +4,7 @@ namespace LearningOOP.BaseStations
 {
     public interface IBaseStation
     {
-        void ExecuteCall(IPhone callerPhone, string number);
-        void Connect(IPhone phone);
+        void ExecuteCall(ICallableDevice callerPhone, string number);
+        void Connect(ICallableDevice phone);
     }
 }

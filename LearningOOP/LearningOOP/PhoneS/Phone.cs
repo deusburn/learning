@@ -1,6 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.Linq;
+using System.Security.Cryptography.X509Certificates;
 using System.Text;
 using System.Threading.Tasks;
 using LearningOOP.BaseStations;
@@ -12,11 +13,13 @@ namespace LearningOOP.PhoneS
         private readonly IBaseStation _station;
         protected PhoneState CurrentState = PhoneState.Idle;
         protected string LastCalledNumber = string.Empty;
+        private string _phoneNumber;
 
-        public Phone(IBaseStation station)
+        public Phone(IBaseStation station, string number)
         {
             _station = station;
             _station.Connect(this);
+            _phoneNumber = number;
         }
         
         public void CallByNumber(string number)
@@ -44,12 +47,12 @@ namespace LearningOOP.PhoneS
 
         public string GetNumber()
         {
-            throw new NotImplementedException();
+            return _phoneNumber;
         }
 
         public void StartDialing(string number)
         {
-            throw new NotImplementedException();
+            LastCalledNumber = number;
         }
     }
 }

@@ -3,6 +3,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using LearningOOP.BaseStations;
 using LearningOOP.PhoneS;
 
 namespace LearningOOP
@@ -11,22 +12,12 @@ namespace LearningOOP
     {
         static void Main(string[] args)
         {
-            var GalaxyS7 = new Phone();
-            Console.WriteLine("Last number before phone using: {0}", GalaxyS7.GetLastNumber());
+            IBaseStation station = new BaseStation();
 
-            GalaxyS7.CallByNumber("0978144504");
-            GalaxyS7.EndCall();
+            var GalaxyS7 = new Phone(station, "0978144504");
+            var Aser = new Phone(station,"0982484009");
 
-            Console.WriteLine("Last number after phone using: {0}", GalaxyS7.GetLastNumber());
-
-            var savedNumber = GalaxyS7.GetLastNumber();
-
-            GalaxyS7.CallByNumber("911");
-
-            Console.WriteLine("Last number: {0}", GalaxyS7.GetLastNumber());
-
-            GalaxyS7.CallByNumber(savedNumber);
-            Console.WriteLine("Last number: {0}", GalaxyS7.GetLastNumber());
+            GalaxyS7.CallByNumber("0982484009");
         }
     }
 }

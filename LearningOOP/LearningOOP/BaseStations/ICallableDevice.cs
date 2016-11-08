@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace LearningOOP.BaseStations
 {
-    interface ICallableDevice
+    public interface ICallableDevice
     {
         string GetNumber();
         void StartDialing(string number);
